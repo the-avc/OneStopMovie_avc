@@ -361,7 +361,7 @@
             console.log(userName);
             sessionStorage.setItem("user-name", userName);
             let UserName = sessionStorage.getItem('user-name');
-        if (UserName == null) {
+        if (userName == undefined) {
             document.getElementById('profile').innerHTML = `AVC🫅`;
         }
         else {
