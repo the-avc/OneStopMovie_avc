@@ -1,0 +1,151 @@
+.movie-detail{
+    background: url(assets/images/movie-detail-bg.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 550px;
+    padding-top: 39px;
+    padding-bottom: 69px;
+}   
+.container-movie{
+    padding: 15px;
+    position: relative;
+    display: flex;
+    /* align-items: center; */
+    gap: 69px;
+    flex-wrap: wrap;
+    top: 69px;
+    justify-content: center;
+
+}
+
+.banner{
+    position: relative;
+    overflow: hidden;
+    max-width: 300px;
+    border-radius: 6px;
+    /* top: 80px;     */
+    margin-bottom: 50px;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 50px;
+}
+
+.detail-content{
+    width: 630px;
+
+
+}
+.detail-title{
+    margin-bottom: 4px;
+    font-size: 45px;
+}
+.detail-title span{
+    font-weight: 400;
+    color: grey;
+    font-size: 34px;
+}
+.duration{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+#status{
+    color: chartreuse;
+}
+.facts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px 25px;
+  }
+.genre-movie> a:hover{
+    color: var(--primary-color);
+}
+  .badge {
+    font-weight: 700;
+    border: 2px solid transparent;
+    padding: 2px 10px;
+  }
+  
+  .badge-fill {
+    background:white;
+    color: black;
+  }
+  
+  .badge-outline { 
+    border-color: white; 
+}
+.actions-movie{
+    margin: 15px 0px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.actions-movie svg{
+    cursor: pointer;
+}
+.rating-movie{
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+}
+.rating-movie span{
+    padding-top: 6px;
+}
+.tagline{
+    color: aquamarine;
+    margin-bottom: 10px;
+    font-size: 17px;
+    
+}
+.overview p{
+    font-size: 15px;
+}
+
+.toWatch.saved>svg{
+    fill: var(--primary-color);
+}
+
+@media(max-width: 1031px){
+    .container-movie{
+        gap: 38px;
+    }
+    .detail-content{
+        width: 554px;
+    }
+}
+@media(max-width: 923px){
+
+}.banner{
+    margin-bottom: 0px;
+
+}
+@media(max-width: 586px){
+    .detail-title{
+        font-size: 36px;
+    }
+    .detail-title span{
+        font-size: 25px;
+    }
+    .rating-movie{
+        font-size: 31px;
+    }
+}
+@media(max-width: 375px){
+    .detail-title{
+        font-size: 30px;
+    }
+    .detail-title span{
+        font-size: 20px;
+    }
+    .rating-movie{
+        font-size: 24px;
+    }
+    .facts{
+        font-size: 14px;
+    }
+}

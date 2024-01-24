@@ -1,0 +1,758 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@700&family=Poppins:wght@500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #e2d703;
+    --secondary-color: rgb(23 29 33);
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 6px 3px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 60px 0px 20px;
+}
+
+header.shadow {
+    background-color: var(--secondary-color);
+}
+
+
+.navbar {
+    display: flex;
+    gap: 50px;
+}
+
+.navbar li {
+    position: relative;
+    font-size: 17px;
+}
+
+/* .navbar a::after{
+    content: '';
+    width: 100%;
+    position: absolute;
+} */
+.navbar a:hover {
+    color: var(--primary-color);
+    /* width: 100%; */
+}
+
+.box svg {
+    cursor: pointer;
+    z-index: 101;
+    display: none;
+}
+
+.btn {
+    padding: 9px 21px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: black;
+    transition: all 0.21s ease;
+}
+
+.btn-action {
+    margin: 0px 0px 0px 20px;
+    display: flex;
+    column-gap: 11px;
+}
+.btn-home {
+    display: flex;
+}
+
+.dropdown-menu{
+    position: absolute;
+    background-color: var(--secondary-color);
+    top: 77px;
+    display: none;
+    border: 2px solid var(--primary-color);
+    padding: 5px 2px 0px 2px;
+    text-align: center;
+}
+.dropdown-menu.show{
+    display: block;
+}
+.dropdown-menu a:hover{
+    color: var(--primary-color);
+}
+
+.btn-action{
+    display: flex;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.LogOutBtn{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.LogOutBtn:hover svg{
+    fill: var(--primary-color);
+}
+.container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+}
+
+.caret-up.active,
+.caret-down.active{
+    display: none;
+}
+
+
+.container img.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+.home-text {
+    z-index: 100;
+    padding: 0px 60px;
+    font-size: 33px;
+}
+
+.home-text>:nth-child(1) {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.home-text h1 {
+    margin-bottom: 20px;
+}
+
+.home-text .btn {
+    font-size: 17px;
+    padding: 15px 30px;
+}
+
+.home-text svg {
+    margin: 0px 0px -7px 0px;
+    fill: white;
+}
+
+.home-text .btn:hover svg {
+    fill: black;
+}
+
+.heading {
+    /* text-align: center; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+/**************** 
+search box and genre List
+******************** */
+
+.search-box {
+    background-color: transparent;
+    /* border: 2px solid var(--primary-color); */
+    border: 3px solid var(--secondary-color);
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+#form {
+    display: flex;
+    gap: 6px;
+}
+
+.search {
+    background-color: transparent;
+    border-style: none;
+    outline: none;
+    width: 222px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#movies {
+    background-image: url(assets/images/top-rated-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 33px;
+}
+
+.genre-btn {
+    background-color: rgb(10 15 14);
+    color: lightgrey;
+    text-transform: uppercase;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 11px 25px;
+    box-shadow: 0px 3px 50px 3px var(--secondary-color);
+}
+#clr{
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.genre-btn.highlight{
+    color: var(--primary-color);
+    opacity: 0.77;
+}
+.genre-btn:hover {
+    color: var(--primary-color);
+    opacity: 0.9;
+}
+
+.join {
+    background-image: url(assets/images/cta-bg.jpg);
+    padding: 24px;
+}
+
+
+/*************************
+ movies card  
+ ***************************/
+.movies {
+    padding: 25px;
+}
+
+.TVshows {
+    padding-top: 46px;
+}
+
+.movies-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(230px, auto)); */
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10px;
+
+}
+
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 95%;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-card img:hover {
+    transform: translateY(-10px);
+    transition: all 0.3s linear;
+}
+
+.title h3 {
+    font-size: 24px;
+    font-weight: 500;
+
+}
+
+.title-card span {
+    font-size: 18px;
+
+}
+
+.title-card {
+    font-size: 21px;
+    padding-top: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+
+}
+
+.rating svg path {
+    fill: #e2d703;
+}
+
+.title-card svg {
+    margin-bottom: -3px;
+}
+
+/* tv shows  */
+#TVshows {
+    background-image: url(assets/images/tv-series-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* join  */
+
+.line {
+    height: 10px;
+    background-color: #262b2e;
+}
+
+/************************* 
+footer  
+****************************/
+.footer {
+    background: url(assets/images/footer-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.footer-top {
+    /* background: url(assets/images/footer-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 30px 24px 24px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social svg {
+    width: 32px;
+    height: 32px;
+}
+
+.social svg path {
+    stroke: white;
+}
+
+.social a:hover path {
+    stroke: var(--primary-color);
+}
+
+.bottom {
+    padding: 0px 16px 20px 16px;
+    font-size: 15px;
+}
+
+.bottom span {
+    color: var(--primary-color);
+}
+
+
+
+/* ****************
+go to top  
+*********************/
+.go-top {
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    /* z-index: 102; */
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 1px 7px 1px hsl(252deg 9.43% 10.39%);
+    transition: all 0.1s ease-out;
+    visibility: hidden;
+}
+
+.go-top svg {
+    width: 27px;
+    height: 27px;
+}
+
+.go-top.active {
+    visibility: visible;
+}
+
+
+
+/***************************
+ pagination  
+ ***************************/
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 11px 24px 0px 24px;
+}
+
+.page {
+    padding: 5px 7px;
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.page:hover {
+    color: black;
+    background-color: var(--primary-color);
+}
+
+.current {
+    padding: 7px 15px;
+    border: 3px solid var(--primary-color);
+    border-radius: 19px;
+    margin: 6px;
+}
+
+.page.disabled {
+    cursor: not-allowed;
+    color: grey;
+    background-color: transparent;
+}
+
+
+
+
+
+/* **********
+INDEX 02
+************ */
+
+.home-text h5 {
+    margin-bottom: 19px;
+}
+
+.home-text .btn2 {
+    font-size: 23px;
+}
+
+
+/******************
+ MOVIE DETAILS 
+ *********************/
+
+
+
+/***************************
+ media-queries
+ ****************************/
+
+
+@media(max-width: 923px) {
+    .box :first-child {
+        display: initial;
+    }
+
+    .navbar {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        /* top: 100%; */
+        top: -600px;
+        row-gap: 30px;
+        background-color: var(--secondary-color);
+        left: 0;
+        right: 0;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0px 10px 10px -10px hsl(252deg 9.43% 10.39%);
+        transition: 0.1s all linear;
+
+    }
+
+    .navbar a {
+        width: 100%;
+    }
+
+    .navbar a::after {
+        display: none;
+    }
+
+    .navbar.active {
+        top: 100%;
+        transition: all 0.3s ease-out;
+    }
+
+
+    .home-text h1 {
+        font-size: 41px;
+    }
+
+    .container {
+        min-height: 500px;
+    }
+
+    .heading {
+        font-size: 32px;
+    }
+
+    .genre-btn {
+        font-size: 12px;
+        padding: 9px 16px;
+    }
+
+    .genre-list {
+        margin-bottom: 24px;
+    }
+
+    .title h3 {
+        font-size: 18px;
+    }
+
+    .title-card span {
+        font-size: 16px;
+    }
+
+    .title-card {
+        font-size: 16px;
+    }
+
+    .social svg {
+        height: 29px;
+    }
+
+
+    .footer-top {
+        padding-top: 20px;
+    }
+}
+
+@media(max-width: 708px) {
+    .home-text h1 {
+        font-size: 36px;
+    }
+
+    .movies-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    /* .title h3 {
+        font-size: 16px;
+    } */
+
+    /* .title span {
+        font-size: 12px;
+    } */
+
+
+    /* .join-form :nth-child(2) {
+        padding: 9px 20px;
+    } */
+}
+
+
+@media(max-width: 525px) {
+
+    .container {
+        min-height: 425px;
+    }
+
+    .home-text {
+        font-size: 25px;
+    }
+
+    .home-text .btn {
+        padding: 9px 21px;
+    }
+
+    .movies-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .btn-action {
+        font-size: 16px;
+    }
+
+    .logo svg {
+        width: 179px;
+    }
+
+    .search {
+        font-size: 11px;
+    }
+
+
+    .social svg {
+        height: 21px;
+    }
+}
+
+@media(max-width: 474px) {
+    .home-text {
+        font-size: 21px;
+    }
+
+    .home-text h1 {
+        font-size: 29px;
+    }
+
+    .btn {
+        padding: 9px 13px;
+    }
+
+    .container {
+        min-height: 610px;
+    }
+
+    .logo svg {
+        width: 155px;
+    }
+
+    header {
+        padding-right: 33px;
+    }
+
+    .heading span {
+        font-size: 24px;
+        padding-right: 11px;
+        padding-bottom: 6px;
+    }
+
+    .search-box {
+        padding: 5px 10px;
+    }
+
+    .search {
+        font-size: 11px;
+        padding: 5px 6px;
+    }
+
+    .social {
+        flex-direction: column;
+    }
+
+
+    .navbar.active li {
+        font-size: 15px;
+    }
+
+    .movies {
+        padding-top: 41px;
+    }
+
+    .title h3 {
+        font-size: 18px;
+    }
+
+    .title-card span {
+        font-size: 16px;
+    }
+
+    .title-card {
+        font-size: 17px;
+    }
+}
+
+@media(max-width: 404px) {
+    .logo svg {
+        width: 145px;
+    }
+    .home-text .btn {
+        font-size: 15px;
+    }
+
+    .genre-list {
+        gap: 7px;
+    }
+
+    .title h3 {
+        font-size: 19px;
+    }
+
+    .title-card span {
+        font-size: 16px;
+    }
+
+    .title-card {
+        font-size: 15px;
+    }
+
+    .search-box {
+        margin-left: 6px;
+    }
+
+    .page {
+        font-size: 11px;
+    }
+}
+
+@media(max-width: 350px) {
+    .logo svg {
+        width: 119px;
+    }
+
+    .btn-action .btn {
+        font-size: 12px;
+        border-radius: 21px;
+    }
+
+    .home-text h1 {
+        font-size: 23px;
+    }
+
+    .title h3 {
+        font-size: 15px;
+    }
+
+    .title-card span {
+        font-size: 14px;
+    }
+
+    .movies {
+        padding-top: 110px;
+    }
+}
