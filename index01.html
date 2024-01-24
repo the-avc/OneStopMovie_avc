@@ -312,15 +312,6 @@
 
     <script src="script01.js"></script>
     <script>
-
-        let UserName = sessionStorage.getItem('user-name');
-        if (UserName == null) {
-            document.getElementById('profile').innerHTML = `AVC🫅`;
-        }
-        else {
-            document.getElementById('profile').innerText = "user: " + UserName;
-
-        }
         let LogOutBtn = document.getElementById('LogOutBtn');
         let MainText = document.getElementById("main-text");
         function SignOut() {
@@ -362,12 +353,20 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth();
         const db = getDatabase();
+        let UserUid = sessionStorage.getItem('user-uid');
 
-        const userRef = ref(db, 'users/' + user.uid);
+        const userRef = ref(db, 'users/' + UserUid);
         onValue(userRef, (snapshot) => {
             const userName = snapshot.val().username;
             console.log(userName);
             sessionStorage.setItem("user-name", userName);
+            let UserName = sessionStorage.getItem('user-name');
+        if (UserName == null) {
+            document.getElementById('profile').innerHTML = `AVC🫅`;
+        }
+        else {
+            document.getElementById('profile').innerText = "user: " + UserName;
+        }
         });
 
     </script>
