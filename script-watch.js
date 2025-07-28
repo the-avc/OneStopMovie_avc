@@ -1,7 +1,7 @@
 let TWmoviesList = document.getElementById('TWmovies-list');
 let UserEmail = sessionStorage.getItem("user-email");
 
-let API_key = "api_key=1108d733ca4193e846ae6030e4e73b47";
+let API_key = "api_key=1108";
 let BASE_URL = "https://api.themoviedb.org/3";
 let IMG_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
