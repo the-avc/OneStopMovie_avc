@@ -34,7 +34,7 @@ document.querySelector('.btn-action').addEventListener('click', () => {
 // FETCHING TMDB API
 // *******************
 
-let API_key = "api_key=1108d733ca4193e846ae6030e4e73b47";
+let API_key = "api_key=1108";
 let BASE_URL = "https://api.themoviedb.org/3";
 let IMG_BASE_URL = "https://image.tmdb.org/t/p/w500";
 let API_URL1 = BASE_URL + "/trending/all/week?" + API_key; //trending-ALL-WEEK
